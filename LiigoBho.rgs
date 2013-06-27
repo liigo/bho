@@ -1,0 +1,50 @@
+HKLM
+{
+   SOFTWARE
+   {
+      Microsoft
+      {
+         Windows
+         {
+            CurrentVersion
+            {
+               Explorer
+               {
+                  'Browser Helper Objects'
+                  {
+                     ForceRemove {C057D27A-72F7-472d-8A3C-67799116BF1C}
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+
+HKCR
+{
+	LiigoBho.BhoApp.1 = s 'BhoApp Class'
+	{
+		CLSID = s '{C057D27A-72F7-472d-8A3C-67799116BF1C}'
+	}
+	LiigoBho.BhoApp = s 'BhoApp Class'
+	{
+		CLSID = s '{C057D27A-72F7-472d-8A3C-67799116BF1C}'
+		CurVer = s 'LiigoBho.BhoApp.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C057D27A-72F7-472d-8A3C-67799116BF1C} = s 'BhoApp Class'
+		{
+			ProgID = s 'LiigoBho.BhoApp.1'
+			VersionIndependentProgID = s 'LiigoBho.BhoApp'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{169379C2-17DB-4790-8B57-3D14AB061886}'
+		}
+	}
+}

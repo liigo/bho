@@ -1,0 +1,49 @@
+// LiigoBho.idl : IDL source for LiigoBho.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (LiigoBho.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(0652122B-CF8C-4b9b-97C3-EFD74DB38D86),
+		dual,
+		helpstring("IBhoApp Interface"),
+		pointer_default(unique)
+	]
+	interface IBhoApp : IDispatch
+	{
+	};
+
+[
+	uuid(169379C2-17DB-4790-8B57-3D14AB061886),
+	version(1.0),
+	helpstring("LiigoBho 1.0 Type Library")
+]
+library LiigoBhoLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(F2AABB59-8348-49a5-886E-BD5E4DA6E59E),
+		helpstring("_IBhoAppEvents Interface")
+	]
+	dispinterface _IBhoAppEvents
+	{
+		properties:
+		methods:
+	};
+
+	[
+		uuid(C057D27A-72F7-472d-8A3C-67799116BF1C),
+		helpstring("BhoApp Class")
+	]
+	coclass BhoApp
+	{
+		[default] interface IBhoApp;
+		[default, source] dispinterface _IBhoAppEvents;
+	};
+};
