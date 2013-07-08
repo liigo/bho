@@ -9,7 +9,7 @@ Install: regsvr32 full/path/to/liigobho.dll (need administrator privileges)
 
 Uninstall: regsvr32 full/path/to/liigobho.dll (need administrator privileges)
 
-The core code int file BhoApp.cpp list here:
+The core code in file BhoApp.cpp list here:
 
 	STDMETHODIMP CBhoApp::Invoke(DISPID dispidMember, REFIID riid, LCID lcid, WORD wFlags, DISPPARAMS *pDispParams, VARIANT *pvarResult, EXCEPINFO *pExcepInfo, UINT *puArgErr)
 	{
